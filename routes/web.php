@@ -17,6 +17,6 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('welcome');
 });
- Route::get('tampil-user', [UserController::class, 'tampilUser']);
- Route::get('tambah-user', [UserController::class, 'tambahUser']);
- Route::post('simpan-user', [UserController::class, 'simpanUser']);
+ Route::get('/tampil-user', [UserController::class, 'tampilUser']);
+ Route::get('/tambah-user', [UserController::class, 'tambahUser']);
+ Route::post('/tambah-user', [UserController::class, 'simpanUser']);

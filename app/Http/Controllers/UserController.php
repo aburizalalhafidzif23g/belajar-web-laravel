@@ -10,15 +10,15 @@ class UserController extends Controller
     public function tampilUser(){
         $pengguna = User::all();
         //dd($pengguna->toArray());
-        //return view('user', compact('pengguna'));
-        return view('user', ['pengguna' => $pengguna]);
+        return view('tampil-user', compact('pengguna'));
+        //return view('tampil-user', ['pengguna' => $pengguna]);
     }
 
     public function tambahUser(){
-        return view('tambahuser');
+        return view('tambah-user');
     }
 
-    public function tambahUserProses(Request $request){
+    public function simpanUser(Request $request){
         User::create([
             'name' => $request->name,
             'email' => $request->email,

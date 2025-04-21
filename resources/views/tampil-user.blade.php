@@ -3,7 +3,7 @@
     <th>Nama</th>
     <th>Email</th>
   </tr>
-  @foreach ($orang as $row)
+  @foreach ($pengguna as $row)
   <tr>
     <td>{{ $row->name }}</td>
     <td>{{ $row->email }}</td>

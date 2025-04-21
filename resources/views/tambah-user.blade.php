@@ -1,4 +1,4 @@
-<form action="" method="POST">
+<form action="/tambah-user" method="POST">
   @csrf
   <input type="text" name="name" placeholder="Name">
   <input type="email" name="email" placeholder="Email">
