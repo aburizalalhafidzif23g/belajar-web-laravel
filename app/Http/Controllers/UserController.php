@@ -26,4 +26,38 @@ class UserController extends Controller
         ]);
         return redirect('tampil-user');
     }
+    public function edit($id){
+        //cek apakah id user ada atau tidak
+        $pengguna = User::findOrFail($id);
+
+        return view('edituser',['pengguna' => $pengguna]); //panggil view dan isi $pengguna
+    }
+
+    public function update(Request $request, $id) {
+        //validasi inputan
+        $request->validate([
+            'name' => 'required|min:3|max:255'
+        ]);
+
+        //cek id nya ada or tidak
+        $pengguna = User::findOrFail($id);
+
+        //ubah nama
+        $pengguna->update([
+            'name' => $request->name
+        ]);
+
+        return redirect('tampil-user');
+
+    }
+
+    public function destroy($id) {
+        //cek id nya ada or tida
+        $pengguna = user::findOrFail($id);
+
+        //delete
+        $pengguna->delete();
+
+        return redirect('tampil-user');
+    }
 }

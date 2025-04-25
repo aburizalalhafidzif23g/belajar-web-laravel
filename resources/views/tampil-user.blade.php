@@ -7,6 +7,14 @@
   <tr>
     <td>{{ $row->name }}</td>
     <td>{{ $row->email }}</td>
+    <td>
+      <a href="{{ route('user.edit', $row->id) }}">Edit</a>
+      <form action="{{ route('user.destroy', $row->id) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <input type="submit" value="hapus">       
+      </form>
+    </td>
   </tr>
   @endforeach
 </table>
